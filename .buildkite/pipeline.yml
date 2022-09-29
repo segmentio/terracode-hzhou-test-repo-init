@@ -1,0 +1,10 @@
+steps:
+  - label: ":lint-roller: Lint"
+    plugins:
+      - docker#v3.3.0:
+          image: hashicorp/terraform:1.1.0
+          command:
+            - "fmt"
+            - "-recursive"
+            - "-check"
+            - "."

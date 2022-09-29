@@ -1,0 +1,18 @@
+version: 2
+automerge: true
+parallel_plan: true
+projects:
+  - name: terracode-hzhou-test-repo-init-stage-us_west_2-core
+    dir: ./stage/us-west-2/core
+    workspace: terracode-hzhou-test-repo-init-stage-us_west_2-core
+    terraform_version: "1.1.7"
+    autoplan:
+      when_modified: ["*.tf", "**/*.tf"]
+      enabled: true
+  - name: terracode-hzhou-test-repo-init-production-us_west_2-core
+    dir: ./production/us-west-2/core
+    workspace: terracode-hzhou-test-repo-init-production-us_west_2-core
+    terraform_version: "1.1.7"
+    autoplan:
+      when_modified: ["*.tf", "**/*.tf"]
+      enabled: true
